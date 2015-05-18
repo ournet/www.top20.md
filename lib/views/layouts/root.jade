@@ -1,0 +1,43 @@
+doctype html
+html(lang=currentCulture.language)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= (site.head.title || site.title)
+    meta(name='description', content=site.head.description)
+    meta(name='keywords', content=site.head.keywords)
+    block styles
+    link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-e0ffca01.min.css')
+    if (site.head.canonical)
+      link(rel='canonical', href=site.head.canonical)
+    link(rel='shortcut icon', href=config.favicon)
+  body(class=('language-'+currentCulture.language))
+    #fb-root
+    #page(class=site.pageLayoutCss)
+      #page-wrapper
+        #page-header
+          .container
+            block header
+        #page-content
+          .container
+            block content
+        #page-footer
+          .container
+            block footer
+
+    if (!noGoogleAds)
+      script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(type='text/javascript', src='http://assets.ournetcdn.net/top20/js/main-f56a7178.min.js')
+    block scripts
+    
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '#{config.googleAnalyticsId}', '#{config.domain}');
+      ga('set', 'dimension1', '#{project.name}');
+      ga('send', 'pageview');
