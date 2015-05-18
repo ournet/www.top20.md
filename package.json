@@ -1,0 +1,33 @@
+{
+  "name": "www.top20.md",
+  "version": "3.1.0",
+  "description": "Top20.md website",
+  "main": "./lib/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./lib/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Mitea@bitbucket.org/ournet/www.top20.md.git"
+  },
+  "keywords": [
+    "top20",
+    "web",
+    "app"
+  ],
+  "author": "Dumitru Cantea",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^1.1.0",
+    "express": "^4.12.4",
+    "body-parser": "^1.12.4",
+    "i18n": "^0.5.0",
+    "jade": "^1.9.2",
+    "method-override": "^2.3.3",
+    "moment": "^2.10.3",
+    "response-time": "^2.3.1",
+    "urlset": "^0.4.1",
+    "morgan": "^1.5.3"
+  }
+}

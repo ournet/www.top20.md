@@ -1,0 +1,47 @@
+{
+  "home": "/",
+  "weather": {
+    "$name": "vremea",
+    "home": {
+      "$url": "/",
+      "$absolute": true
+    },
+    "search": "/places",
+    "search": "/places",
+    "place": "/${0}",
+    "places": {
+      "$url": "/places",
+      "byAdm1": "/${0}"
+    },
+    "widget": {
+      "$absolute": true,
+      "$url": "/widget",
+      "widgetFrame": {
+        "$url": "/widget/widget_frame",
+        "$absolute": true
+      },
+      "widgetScript": {
+        "$url": "/widget/widget_script",
+        "$absolute": true
+      }
+    },
+    "widget2": {
+      "$absolute": true,
+      "$url": "/widget2",
+      "widgetFrame": {
+        "$url": "/widget2/widget_frame",
+        "$absolute": true
+      },
+      "widgetHtmlScript": {
+        "$url": "/widget2/widget_html_script",
+        "$absolute": true
+      }
+    },
+    "controls": {
+      "morePlaces": {
+        "$url": "/controls/more_places/${0}/${1}.json",
+        "$absolute": true
+      }
+    }
+  }
+}
