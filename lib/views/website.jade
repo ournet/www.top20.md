@@ -1,0 +1,124 @@
+extends ./layouts/root.jade
+
+block content
+  .row
+    .col-md-9.col-sm-12
+      .row
+        .col-sm-7.col-xs-12
+          .content-control.view-table
+            .control-title= __('info_website')
+            .control-content
+              table
+                tbody
+                  tr
+                    th= __('url')
+                    td
+                      b
+                        a(rel='nofollow', target='_blank', href=links.to(website.host))= website.url
+                  tr
+                    th= __('title')
+                    td
+                      h2= website.title
+                  tr
+                    th= __('description')
+                    td= website.description
+                  tr
+                    th= __('keywords')
+                    td
+                      each item, index in website.keywords
+                        a(href=links.search({q: item, ul: currentCulture.language}))= item
+                        if index<website.keywords.length-1
+                          |, 
+                  tr
+                    th= __('categories')
+                    td
+                      div
+                        a(href='/c-52') Știri, Massmedia
+                        |  -                                                             
+                        a(href='/c-52-190') TV
+                  if (website.contentType)
+                    - var type = ContentTypes.type(website.contentType)
+                    tr
+                      th= __('content_type')
+                      td
+                        a(href=links.catalog.type(type.name,{ul:currentCulture.language}))= type[currentCulture.language]
+        .col-sm-5.col-xs-12
+          .content-control.view-table
+            .control-title SEO Ratings
+            .control-content
+              table#seo-ratings
+                tbody
+                  tr
+                    th Google PR
+                    td 5
+                    td
+                      span.percent.p-2 62,50%
+                  tr
+                    th Google Backlinks
+                    td 56
+                    td
+                      span.percent.p-2 56,00%
+                  tr
+                    th Google Pages
+                    td 274.000
+                    td
+                      span.percent.p-4 100,00%
+                  tr
+                    th Alexa Rank
+                    td 31.248
+                    td
+                      span.percent.p-2 68,75%
+                  tr
+                    th Alexa Rank (MD)
+                    td 19
+                    td
+                      span.percent.p-4 99,81%
+                  tr
+                    th Alexa Backlinks
+                    td 513
+                    td
+                      span.percent.p-4 100,00%
+                  tr
+                    th Alexa Bounce Rate
+                    td 40,70
+                    td
+                      span.percent.p-1 32,17%
+                  tr
+                    th Alexa Pageviews/Visitor
+                    td 3,25
+                    td
+                      span.percent.p-0 16,25%
+                  tr
+                    th Alexa Time on Site
+                    td 6,13
+                    td
+                      span.percent.p-2 61,30%
+                  tr
+                    th Yandex тИЦ
+                    td 425
+                    td
+                      span.percent.p-1 42,50%
+      br
+      #disqus_thread
+      script(type='text/javascript').
+        /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
+        var disqus_shortname = 'top20md';
+        var disqus_identifier = 'website-#{website.id}';
+        var disqus_url = '#{site.head.canonical}';
+        var disqus_config = function () { this.language = '#{currentCulture.language}'; };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+    .col-md-3.hidden-xs.hidden-sm
+      .center-text
+        // Top20 160x600
+        ins.adsbygoogle(style='display:inline-block;width:160px;height:600px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='2787651524')
+        script.
+          (adsbygoogle = window.adsbygoogle || []).push({});
+

@@ -21,19 +21,27 @@ html(lang=currentCulture.language)
             .row
               .col-md-2.col-sm-3.col-xs-6
                 #header-logo
-                  a(href='/')
+                  a(href=links.home({ul:currentCulture.language}))
               .col-md-2.hidden-sm.hidden-xs
                 #header-add
-                  a.icon-btn(href=links.add())
+                  a.icon-btn(href=links.add({ul:currentCulture.language}))
                     span.icon
                     = __('add_website')
               .col-md-4.col-sm-5.col-xs-6
                 #header-search
-                  form#q-form(method='get', action=links.search())
+                  form#q-form(method='get', action=links.search({ul:currentCulture.language}))
                     input#q(name='q', placeholder=__('search_website'))
                     a.submit-btn(onclick="$('#q-form').submit();")
                       span.icon
               .col-sm-4.hidden-xs
+                if (weatherWidget)
+                  #widget-weather
+                    span.symbol
+                      img(alt='', src='http://assets.ournetcdn.net/root/img/icons/weather/48/'+weatherWidget.forecast.symbol.id+'.png', title=weatherWidget.forecast.symbol.name)
+                    span.name
+                      a(href=weatherWidget.place.url)= weatherWidget.place.name
+                      span.no= weatherWidget.forecast.temperature
+                      | °C
         #page-content
           .container
             #content-header.clearfix

@@ -15,13 +15,9 @@ block catalog_content
           tr
             td.position= (index + 1)
             td.site
-              a.domain(title=website.title, href=links.website(website.host))= util.startWithUpperCase(website.host)
-              a.ext(rel='nofollow', target='_blank', href=links.to(website.url))
+              a.domain(title=website.title, href=links.website(website.host, {ul:currentCulture.language}))= util.startWithUpperCase(website.host)
+              a.ext(rel='nofollow', target='_blank', href=links.to(website.host))
                 span.icon
               .title= util.wrapAt(website.title, 50)
-            td.number
-              .arrow-target
-                | 71,1957
-                .prev 71,1957
-                span.icon(title='0')
+            td.number.order-by= website.rating
 

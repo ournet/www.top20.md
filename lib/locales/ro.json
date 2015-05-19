@@ -2,7 +2,7 @@
 	"language_ro": "language_ro",
 	"home": "home",
 	"general_rating": "Clasament general",
-	"title": "Moldova Top20",
+	"site_title": "Moldova Top20",
 	"description": "description",
 	"web_directory": "Catalog web",
 	"search_website": "Caută website...",
@@ -22,5 +22,9 @@
 	"top_details": "Clasament site-uri pentru ultimele 30 zile",
 	"new_websites": "new_websites",
 	"ads": "ads",
-	"search_results_format": "search_results_format"
+	"search_results_format": "Resultatul căutării după: %s",
+	"info_website": "Informații website",
+	"url": "url",
+	"keywords": "keywords",
+	"title": "title"
 }
