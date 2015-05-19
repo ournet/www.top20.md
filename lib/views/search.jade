@@ -1,0 +1,27 @@
+extends ./layouts/catalog.jade
+
+block catalog_content
+  h2.page-title= title
+  br
+  .list.top-websites
+    table.top-table
+      thead
+        tr
+          th.first
+          th= __('website')
+          th.number(title=__('rating_title'))= __('rating')
+      tbody
+        each website, index in websites
+          tr
+            td.position= (index + 1)
+            td.site
+              a.domain(title=website.title, href=links.website(website.host))= util.startWithUpperCase(website.host)
+              a.ext(rel='nofollow', target='_blank', href=links.to(website.url))
+                span.icon
+              .title= util.wrapAt(website.title, 50)
+            td.number
+              .arrow-target
+                | 71,1957
+                .prev 71,1957
+                span.icon(title='0')
+

@@ -18,10 +18,29 @@ html(lang=currentCulture.language)
       #page-wrapper
         #page-header
           .container
-            block header
+            .row
+              .col-md-2.col-sm-3.col-xs-6
+                #header-logo
+                  a(href='/')
+              .col-md-2.hidden-sm.hidden-xs
+                #header-add
+                  a.icon-btn(href=links.add())
+                    span.icon
+                    = __('add_website')
+              .col-md-4.col-sm-5.col-xs-6
+                #header-search
+                  form#q-form(method='get', action=links.search())
+                    input#q(name='q', placeholder=__('search_website'))
+                    a.submit-btn(onclick="$('#q-form').submit();")
+                      span.icon
+              .col-sm-4.hidden-xs
         #page-content
           .container
-            block content
+            #content-header.clearfix
+              h1.pull-left= title
+              h3#slogan.pull-right= __('slogan')
+            #content.clearfix
+              block content
         #page-footer
           .container
             block footer

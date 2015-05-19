@@ -1,5 +1,9 @@
 {
   "home": "/",
+  "add": "/add",
+  "search": "/search",
+  "website": "/${0}",
+  "to": "/to/${0}",
   "catalog": {
     "$absolute": true,
     "category": "/${0}",

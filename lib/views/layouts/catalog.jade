@@ -1,0 +1,80 @@
+extends ./root.jade
+
+block content
+  .row
+    .col-sm-3.hidden-xs
+      .tab
+        .tab-title= __('categories')
+        ul.tab-content
+          each category in catalog.categories
+            - var active=catalog.category && catalog.category.id===category.id;
+            li
+              a(href=catalog.url(catalog.type && catalog.type.name, category.name), title=category[currentCulture.language], class=(active?'selected':null))
+                = category[currentCulture.language]
+                span.count= category.count
+              if (active && catalog.subCategories)
+                ul
+                  each scategory in catalog.subCategories
+                    - active=catalog.subCategory && catalog.subCategory.id===scategory.id;
+                    li
+                      a(href=catalog.url(catalog.type && catalog.type.name, category.name, scategory.name), title=scategory[currentCulture.language], class=(active?'selected':null))
+                        = scategory[currentCulture.language]
+                        span.count= scategory.count
+
+      .tab
+        .tab-title= __('content_type')
+        ul.tab-content
+          each item in catalog.types
+            - var active=catalog.type && catalog.type.id===item.id;
+            li
+              a(href=catalog.url(item.name, catalog.category && catalog.category.name, catalog.subCategory && catalog.subCategory.name), title=item[currentCulture.language], class=(active?'selected':null))
+                = item[currentCulture.language]
+                span.count= item.count
+
+    .col-sm-9.col-xs-12
+      p#location
+        each item, index in location
+          if index<location.length-1
+            a(href=item.url)= item.text
+            span.separator &rsaquo;
+          else
+            span.last= item.text
+      block catalog_content
+      
+      br
+      .row
+        if (catalog.newWebsites)
+          .col-sm-6
+            .list.top-websites.simple-view
+              table.top-table
+                thead
+                  tr
+                    th.first
+                    th.last= __('new_websites')
+                tbody
+                  each item, index in catalog.newWebsites
+                    tr
+                      td.position= index+1
+                      td.site
+                        a.domain(title=item.title, href=links.website(item.host, {ul:currentCulture.language}))= item.host
+                        a.ext(rel='nofollow', target='_blank', href=links.to(item.url))
+                          span.icon
+                        .title= util.wrapAt(item.title, 50)
+        else
+          .col-sm-6(style='text-align: center;')
+            .tab
+              .tab-title= __('ads')
+              .tab-content
+                // Top20 300 v2.0
+                ins.adsbygoogle(style='display: inline-block; width: 300px; height: 250px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='9577652140')
+                script.
+                  (adsbygoogle = window.adsbygoogle || []).push({ });
+
+        .col-sm-6(style='text-align: center;')
+          .tab
+            .tab-title= __('ads')
+            .tab-content
+              // Top20 300 v2.0
+              ins.adsbygoogle(style='display: inline-block; width: 300px; height: 250px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='9577652140')
+              script.
+                (adsbygoogle = window.adsbygoogle || []).push({ });

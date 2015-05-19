@@ -1,0 +1,50 @@
+extends ./layouts/catalog.jade
+
+block catalog_content
+  h2.page-title= catalog.title.join(' - ')
+  .top-list-info= __('top_details')
+
+  .list.top-websites
+    table.top-table
+      thead
+        tr
+          th.first
+          th= __('website')
+          th.number.ievolution.order-by(title=__('rating_title'))= __('rating')
+          th.number.ievolution(title=__('alexa_rank_title'))= __('alexa_rank')
+          th.number.ievolution(title=__('google_rank_title'))= __('google_rank')
+          th.number.last.ievolution(title=__('yandex_rank_title'))= __('yandex_rank')
+      tbody
+        each website, index in catalog.websites
+          tr
+            td.position= (index + (catalog.page*20) + 1)
+            td.site
+              a.domain(title=website.title, href=links.website(website.host))= util.startWithUpperCase(website.host)
+              a.ext(rel='nofollow', target='_blank', href=links.to(website.url))
+                span.icon
+              .title= util.wrapAt(website.title, 50)
+            td.number.order-by.ievolution
+              .arrow-target
+                | 71,1957
+                .prev 71,1957
+                span.icon(title='0')
+            td.number.ievolution
+              .arrow-target
+                | 238
+                .prev 238
+                span.icon(title='0')
+            td.number.ievolution
+              .arrow-target
+                | 7
+                .prev 7
+                span.icon(title='0')
+            td.number.ievolution
+              .arrow-target
+                | 350
+                .prev 350
+                span.icon(title='0', class='')
+
+    .pagger
+      each item in catalog.pagger
+        a(href=item.url, class=(item.selected?'on selected':null))= item.text
+
