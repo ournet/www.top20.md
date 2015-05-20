@@ -51,7 +51,33 @@ html(lang=currentCulture.language)
               block content
         #page-footer
           .container
-            block footer
+            .row
+              #footer-info.col-sm-5.col-xs-7
+                = __('contact')
+                |: 
+                a info@top20.md
+                | , 
+                a(target='_blank', href='http://blog.top20.md')= __('blog')
+                br
+                a(href='http://www.top20.md/int/ru')= __('international_directory')
+                br
+                | Version: 
+                = project.version
+                br
+              .col-sm-4.hidden-xs
+                if (shareInfo)
+                  .our-sharedata.center-block(data-appname='top20', data-identifier=shareInfo.identifier, data-title=shareInfo.title, data-cid=shareInfo.clientId)
+                    each item in config.shareDataServices
+                      a.our-share-item(data-service=item, class=item, href=shareInfo.getShareUrl(item), rel='nofollow', target='_blank', title=util.format(__('share_on_format'), util.startWithUpperCase(item)))
+                        span.share-icon
+                          i
+                        span.share-count.hidden
+              .col-sm-3.col-xs-5
+                .pull-right
+                  each item in config.languages
+                    if (currentCulture.language!==item)
+                      a(href=links.home({ul:item}))= __('language_'+item)
+
 
     if (!noGoogleAds)
       script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
@@ -59,7 +85,11 @@ html(lang=currentCulture.language)
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script(type='text/javascript', src='http://assets.ournetcdn.net/top20/js/main-f56a7178.min.js')
     block scripts
-    
+    if (shareInfo)
+      script(type='text/javascript').
+        $(document).ready(function(){
+          Sharedata.init();
+        });
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

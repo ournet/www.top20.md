@@ -60,7 +60,7 @@ block content
                         a.ext(rel='nofollow', target='_blank', href=links.to(item.host))
                           span.icon
                         .title= util.wrapAt(item.title, 50)
-        else
+        else if (!noGoogleAds)
           .col-sm-6(style='text-align: center;')
             .tab
               .tab-title= __('ads')
@@ -69,12 +69,12 @@ block content
                 ins.adsbygoogle(style='display: inline-block; width: 300px; height: 250px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='9577652140')
                 script.
                   (adsbygoogle = window.adsbygoogle || []).push({ });
-
-        .col-sm-6(style='text-align: center;')
-          .tab
-            .tab-title= __('ads')
-            .tab-content
-              // Top20 300 v2.0
-              ins.adsbygoogle(style='display: inline-block; width: 300px; height: 250px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='9577652140')
-              script.
-                (adsbygoogle = window.adsbygoogle || []).push({ });
+        if (!noGoogleAds)
+          .col-sm-6(style='text-align: center;')
+            .tab
+              .tab-title= __('ads')
+              .tab-content
+                // Top20 300 v2.0
+                ins.adsbygoogle(style='display: inline-block; width: 300px; height: 250px', data-ad-client='ca-pub-3959589883092051', data-ad-slot='9577652140')
+                script.
+                  (adsbygoogle = window.adsbygoogle || []).push({ });

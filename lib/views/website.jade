@@ -32,10 +32,15 @@ block content
                   tr
                     th= __('categories')
                     td
-                      div
-                        a(href='/c-52') Știri, Massmedia
-                        |  -                                                             
-                        a(href='/c-52-190') TV
+                      each cats in categories
+                        div
+                          each item, index in cats
+                            if (index===0)
+                              a(href=links.catalog.category(item.name,{ul:currentCulture.language}))= item[currentCulture.language]
+                            else
+                              |  -  
+                              a(href=links.catalog.subCategory(cats[0].name,item.name,{ul:currentCulture.language}))= item[currentCulture.language]
+
                   if (website.contentType)
                     - var type = ContentTypes.type(website.contentType)
                     tr
@@ -99,21 +104,7 @@ block content
                     td
                       span.percent.p-1 42,50%
       br
-      #disqus_thread
-      script(type='text/javascript').
-        /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
-        var disqus_shortname = 'top20md';
-        var disqus_identifier = 'website-#{website.id}';
-        var disqus_url = '#{site.head.canonical}';
-        var disqus_config = function () { this.language = '#{currentCulture.language}'; };
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+      .fb-comments(data-href=site.head.canonical, data-width='100%', data-numposts='5', data-colorscheme='light')
 
     .col-md-3.hidden-xs.hidden-sm
       .center-text
@@ -122,3 +113,14 @@ block content
         script.
           (adsbygoogle = window.adsbygoogle || []).push({});
 
+block scripts
+  - var fbCulture = currentCulture.language+'_'+currentCulture.language.toUpperCase();
+  #fb-root
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/#{fbCulture}/sdk.js#xfbml=1&version=v2.3&appId=116865635065734";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));

@@ -26,5 +26,10 @@
 	"info_website": "Informații website",
 	"url": "url",
 	"keywords": "keywords",
-	"title": "title"
+	"title": "title",
+	"blog": "blog",
+	"international_directory": "international_directory",
+	"language_ru": "language_ru",
+	"contact": "contact",
+	"share_on_format": "share_on_format"
 }
