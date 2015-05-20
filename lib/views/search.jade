@@ -15,9 +15,11 @@ block catalog_content
           tr
             td.position= (index + 1)
             td.site
-              a.domain(title=website.title, href=links.website(website.host, {ul:currentCulture.language}))= util.startWithUpperCase(website.host)
+              a.domain(title=website.title, href=links.website(website.host, {ul:currentCulture.language}))= website.title
               a.ext(rel='nofollow', target='_blank', href=links.to(website.host))
                 span.icon
-              .title= util.wrapAt(website.title, 50)
-            td.number.order-by= website.rating
+              .title= website.url
+            td.number.order-by
+              if (website.ratings)
+                = util.numberFormat(website.ratings.rank, 4, currentCulture.language)
 

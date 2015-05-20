@@ -51,58 +51,18 @@ block content
           .content-control.view-table
             .control-title SEO Ratings
             .control-content
-              table#seo-ratings
-                tbody
-                  tr
-                    th Google PR
-                    td 5
-                    td
-                      span.percent.p-2 62,50%
-                  tr
-                    th Google Backlinks
-                    td 56
-                    td
-                      span.percent.p-2 56,00%
-                  tr
-                    th Google Pages
-                    td 274.000
-                    td
-                      span.percent.p-4 100,00%
-                  tr
-                    th Alexa Rank
-                    td 31.248
-                    td
-                      span.percent.p-2 68,75%
-                  tr
-                    th Alexa Rank (MD)
-                    td 19
-                    td
-                      span.percent.p-4 99,81%
-                  tr
-                    th Alexa Backlinks
-                    td 513
-                    td
-                      span.percent.p-4 100,00%
-                  tr
-                    th Alexa Bounce Rate
-                    td 40,70
-                    td
-                      span.percent.p-1 32,17%
-                  tr
-                    th Alexa Pageviews/Visitor
-                    td 3,25
-                    td
-                      span.percent.p-0 16,25%
-                  tr
-                    th Alexa Time on Site
-                    td 6,13
-                    td
-                      span.percent.p-2 61,30%
-                  tr
-                    th Yandex тИЦ
-                    td 425
-                    td
-                      span.percent.p-1 42,50%
+              if (ratings)
+                table#seo-ratings
+                  tbody
+                    each part in ratings.parts
+                      tr
+                        th= __(part.name)
+                        td= util.numberFormat(part.value, part.decimals, currentCulture.language)
+                        td
+                          span.percent(class=('p-'+parseInt(part.rate*4.2)))= util.numberFormat(part.rate*100,2,currentCulture.language)
+                            | %
+              else
+                p ...
       br
       .fb-comments(data-href=site.head.canonical, data-width='100%', data-numposts='5', data-colorscheme='light')
 

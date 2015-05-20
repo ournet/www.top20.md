@@ -16,6 +16,7 @@ block catalog_content
           th.number.last.ievolution(title=__('yandex_rank_title'))= __('yandex_rank')
       tbody
         each website, index in catalog.websites
+          - var diff;
           tr
             td.position= (index + (catalog.page*20) + 1)
             td.site
@@ -24,25 +25,41 @@ block catalog_content
                 span.icon
               .title= util.wrapAt(website.title, 50)
             td.number.order-by.ievolution
-              .arrow-target
-                | 71,1957
-                .prev 71,1957
-                span.icon(title='0')
+              if (website.ratings)
+                .arrow-target
+                  = util.numberFormat(website.ratings.rank, 4, currentCulture.language)
+                  if (website.prevRatings)
+                    - diff = website.ratings.rank - website.prevRatings.rank;
+                    .prev= util.numberFormat(website.prevRatings.rank, 4, currentCulture.language)
+                    if (diff!==0)
+                      span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
             td.number.ievolution
-              .arrow-target
-                | 238
-                .prev 238
-                span.icon(title='0')
+              if (website.ratings)
+                .arrow-target
+                  = util.numberFormat(website.ratings.alexaCountryRank,0, currentCulture.language)
+                  if (website.prevRatings)
+                    - diff = website.ratings.alexaCountryRank - website.prevRatings.alexaCountryRank;
+                    .prev= util.numberFormat(website.prevRatings.alexaCountryRank,0, currentCulture.language)
+                    if (diff!==0)
+                      span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
             td.number.ievolution
-              .arrow-target
-                | 7
-                .prev 7
-                span.icon(title='0')
+              if (website.ratings)
+                .arrow-target
+                  = website.ratings.googleRank
+                  if (website.prevRatings)
+                    - diff = website.ratings.googleRank - website.prevRatings.googleRank;
+                    .prev= website.prevRatings.googleRank
+                    if (diff!==0)
+                      span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
             td.number.ievolution
-              .arrow-target
-                | 350
-                .prev 350
-                span.icon(title='0', class='')
+              if (website.ratings)
+                .arrow-target
+                  = util.numberFormat(website.ratings.yandexRank,0, currentCulture.language)
+                  if (website.prevRatings)
+                    - diff = website.ratings.yandexRank - website.prevRatings.yandexRank;
+                    .prev= util.numberFormat(website.prevRatings.yandexRank,0, currentCulture.language)
+                    if (diff!==0)
+                      span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
 
     .pagger
       each item in catalog.pagger

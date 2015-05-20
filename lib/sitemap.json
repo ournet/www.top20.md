@@ -2,7 +2,7 @@
   "home": "/",
   "add": "/add",
   "search": "/search",
-  "website": "/${0}",
+  "website": "/info/${0}",
   "to": "/to/${0}",
   "catalog": {
     "$absolute": true,

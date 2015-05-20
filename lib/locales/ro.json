@@ -31,5 +31,14 @@
 	"international_directory": "Catalog internațional",
 	"language_ru": "Русский",
 	"contact": "Contact",
-	"share_on_format": "Trimite pe %s"
+	"share_on_format": "Trimite pe %s",
+	"googleRank": "Google PR",
+	"googleBacklinks": "Google Backlinks",
+	"alexaRank": "Alexa Rank",
+	"alexaBacklinks": "Alexa Backlinks",
+	"alexaPageviewsPerVisitor": "Alexa Pageviews/Visitor",
+	"alexaTimeOnSite": "Alexa Time on Site",
+	"alexaBounceRate": "Alexa Bounce Rate",
+	"alexaCountryRank": "Alexa Rank (MD)",
+	"yandexRank": "Yandex тИЦ"
 }
