@@ -46,5 +46,5 @@ block catalog_content
 
     .pagger
       each item in catalog.pagger
-        a(href=item.url, class=(item.selected?'on selected':null))= item.text
+        a(href=item.url, class=(item.selected?'selected':null))= item.text
 

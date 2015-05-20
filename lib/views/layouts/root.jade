@@ -8,7 +8,7 @@ html(lang=currentCulture.language)
     meta(name='description', content=site.head.description)
     meta(name='keywords', content=site.head.keywords)
     block styles
-    link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-e0ffca01.min.css')
+    link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-e81e251c.min.css')
     if (site.head.canonical)
       link(rel='canonical', href=site.head.canonical)
     link(rel='shortcut icon', href=config.favicon)
@@ -43,7 +43,7 @@ html(lang=currentCulture.language)
                     span.name
                       a(href=weatherWidget.place.url)= weatherWidget.place.name
                       span.no= weatherWidget.forecast.temperature
-                      | °C
+                        |  °C
         #page-content
           .container
             #content-header.clearfix

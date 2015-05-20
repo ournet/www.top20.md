@@ -3,7 +3,7 @@ extends ./root.jade
 block content
   .row
     .col-sm-3.hidden-xs
-      .tab
+      .tab.sites-category
         .tab-title= __('categories')
         ul.tab-content
           each category in catalog.categories
@@ -21,7 +21,7 @@ block content
                         = scategory[currentCulture.language]
                         span.count= scategory.count
 
-      .tab
+      .tab.sites-category
         .tab-title= __('content_type')
         ul.tab-content
           each item in catalog.types
