@@ -30,6 +30,8 @@ html(lang=currentCulture.language)
               .col-md-4.col-sm-5.col-xs-6
                 #header-search
                   form#q-form(method='get', action=links.search({ul:currentCulture.language}))
+                    if (currentCulture.language!==config.language)
+                      input(type='hidden', value=currentCulture.language, name='ul')
                     input#q(name='q', placeholder=__('search_website'))
                     a.submit-btn(onclick="$('#q-form').submit();")
                       span.icon
