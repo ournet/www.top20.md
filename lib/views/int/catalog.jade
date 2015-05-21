@@ -1,0 +1,12 @@
+extends ./int.jade
+
+block content
+  .list.sites.full-view
+    table
+      each item, index in websites
+        tr
+          td.count= (page*20)+index+1
+          td.info
+            a(href='/int/info/'+item.id)= item.title
+            p= item.description
+          td.views= item.countViews
