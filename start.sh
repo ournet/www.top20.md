@@ -1,0 +1,1 @@
+forever start ./lib/app.js -c "node"
