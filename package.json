@@ -30,6 +30,9 @@
     "morgan": "^1.5.3",
     "urlset": "^0.4.2",
     "top20rating": "0.0.3",
-    "simple-iso-countries": "0.0.3"
+    "simple-iso-countries": "0.0.3",
+    "ournet.core": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.core/-/latest.tgz",
+    "ournet.data": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.data/-/latest.tgz",
+    "ournet.data.websites": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.data.websites/-/latest.tgz"
   }
 }
