@@ -1,3 +1,62 @@
 extends ./int.jade
 
 block content
+  script(type='text/javascript').
+    function doSearch(word) {
+      document.location = '/int/search?cx=partner-pub-0728889348996824%3A6629020902&cof=FORID%3a10&ie=UTF-8&q=' + encodeURIComponent(word) + '&sa=Search&siteurl=www.top20.md%2fint%2f';
+      return false;
+    //return true;
+    }
+    function gotoUrl(url) {
+      location.href = 'http://#{website.url}';
+      return false;
+    }
+  #site-info
+    .info-header
+      strong Site details:
+      span
+        | Go to 
+        a(rel='nofollow', href='#', onclick="return gotoUrl();")= website.url
+      .clear
+    .info-table
+      table
+        tr
+          th Title:
+          td
+            h1
+              a.gotourl(rel='nofollow', href='#', onclick="return gotoUrl();")= website.title
+        tr
+          th Description:
+          td= website.description
+        tr
+          th Keywords:
+          td
+            each item in keywords
+              a(href='#', onclick="return doSearch('"+item+"');")= item
+              | , 
+        if (category)
+          tr
+            th Category:
+            td
+              a(href='/int/'+website.country+'/c-'+category.id)= category.en
+
+  .section.adds-view2
+    script(type='text/javascript').
+      <!--
+      google_ad_client = "pub-3959589883092051";
+      /* 468x60, Top20 Details */
+      google_ad_slot = "0161375894";
+      google_ad_width = 468;
+      google_ad_height = 60;
+      //-->
+    script(type='text/javascript', src='http://pagead2.googlesyndication.com/pagead/show_ads.js')
+  h3 Similar sites
+  .list.sites.full-view
+    table
+      each item, index in similarWebsites
+        tr
+          td.count= index+1
+          td.info
+            a(href='/int/info/'+item.id)= item.title
+            p= item.description
+          td.views= item.countViews
