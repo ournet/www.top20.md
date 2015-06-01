@@ -36,7 +36,7 @@ html(lang=currentCulture.language)
                     a.submit-btn(onclick="$('#q-form').submit();")
                       span.icon
               .col-sm-4.hidden-xs
-                if (weatherWidget)
+                if (weatherWidget && weatherWidget.forecast)
                   #widget-weather
                     span.symbol
                       img(alt='', src='http://assets.ournetcdn.net/root/img/icons/weather/48/'+weatherWidget.forecast.symbol.id+'.png', title=weatherWidget.forecast.symbol.name)
