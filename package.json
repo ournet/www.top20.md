@@ -19,20 +19,21 @@
   "author": "Dumitru Cantea",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^1.1.0",
-    "express": "^4.12.4",
     "body-parser": "^1.12.4",
+    "dotenv": "^1.1.0",
+    "dotenv-prompt": "^0.1.0",
+    "express": "^4.12.4",
     "i18n": "^0.5.0",
     "jade": "^1.9.2",
     "method-override": "^2.3.3",
     "moment": "^2.10.3",
-    "response-time": "^2.3.1",
     "morgan": "^1.5.3",
-    "urlset": "^0.4.2",
-    "top20rating": "0.0.3",
+    "ournet.core": "^0.1.9",
+    "ournet.data": "0.0.8",
+    "ournet.data.websites": "^0.1.0",
+    "response-time": "^2.3.1",
     "simple-iso-countries": "0.0.3",
-    "ournet.core": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.core/-/latest.tgz",
-    "ournet.data": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.data/-/latest.tgz",
-    "ournet.data.websites": "https://npm.fury.io/G4qSJ8SL1vn1TcQvP9KP/dumitru/ournet.data.websites/-/latest.tgz"
+    "top20rating": "0.0.3",
+    "urlset": "^0.4.2"
   }
 }

@@ -2,4 +2,4 @@
 #update repository
 git pull
 npm install
-pm2 restart top20
+pm2 restart ./pm2.json
