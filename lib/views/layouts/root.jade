@@ -81,8 +81,8 @@ html(lang=currentCulture.language)
     if (!noGoogleAds)
       script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 
-    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-    script(type='text/javascript', src='http://assets.ournetcdn.net/top20/js/main-60d49ea4.min.js')
+    //- script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    //- script(type='text/javascript', src='http://assets.ournetcdn.net/top20/js/main-60d49ea4.min.js')
     block scripts
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -92,3 +92,4 @@ html(lang=currentCulture.language)
       ga('create', '#{config.googleAnalyticsId}', '#{config.domain}');
       ga('set', 'dimension1', '#{project.name}');
       ga('send', 'pageview');
+    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568d09b606ce5d7b', async='async')
