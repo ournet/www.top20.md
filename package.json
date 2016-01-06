@@ -1,6 +1,6 @@
 {
   "name": "www.top20.md",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "Top20.md website",
   "main": "./lib/app.js",
   "scripts": {
