@@ -1,5 +1,5 @@
 {
-  "script": "index.js",
+  "script": "./lib/app.js",
   "max_memory_restart": "200M",
   "name": "top20"
 }
