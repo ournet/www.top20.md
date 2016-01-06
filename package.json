@@ -4,12 +4,12 @@
   "description": "Top20.md website",
   "main": "./lib/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node ./lib/app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://Mitea@bitbucket.org/ournet/www.top20.md.git"
+    "url": "https://github.com/Ournet/www.top20.md.git"
   },
   "keywords": [
     "top20",
