@@ -8,7 +8,10 @@ html(lang=currentCulture.language)
     meta(name='description', content=site.head.description)
     meta(name='keywords', content=site.head.keywords)
     block styles
-    link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-37baafe9.min.css')
+    if (NODE_ENV==='production')
+      link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-'+ config.assets.css.main +'.min.css')
+    else
+      link(type='text/css', rel='stylesheet', href='http://localhost:8044/css/main.css')
     if (site.head.canonical)
       link(rel='canonical', href=site.head.canonical)
     link(rel='shortcut icon', href=config.favicon)
@@ -30,8 +33,6 @@ html(lang=currentCulture.language)
               .col-md-4.col-sm-5.col-xs-6
                 #header-search
                   form#q-form(method='get', action=links.search({ul:currentCulture.language}))
-                    if (currentCulture.language!==config.language)
-                      input(type='hidden', value=currentCulture.language, name='ul')
                     input#q(name='q', placeholder=__('search_website'))
                     a.submit-btn(onclick="$('#q-form').submit();")
                       span.icon
@@ -65,12 +66,6 @@ html(lang=currentCulture.language)
                 = project.version
                 br
               .col-sm-4.hidden-xs
-                if (shareInfo)
-                  .our-sharedata.center-block(data-appname='top20', data-identifier=shareInfo.identifier, data-title=shareInfo.title, data-cid=shareInfo.clientId)
-                    each item in config.shareDataServices
-                      a.our-share-item(data-service=item, class=item, href=shareInfo.getShareUrl(item), rel='nofollow', target='_blank', title=util.format(__('share_on_format'), util.startWithUpperCase(item)))
-                        span.share-icon
-                          i
               .col-sm-3.col-xs-5
                 .pull-right
                   each item in config.languages

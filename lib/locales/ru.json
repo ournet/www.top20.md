@@ -41,5 +41,13 @@
 	"alexaBounceRate": "Alexa Bounce Rate",
 	"alexaCountryRank": "Alexa Rank (MD)",
 	"yandexRank": "Yandex тИЦ",
-	"recommended": "Рекомендуемые"
+	"recommended": "Рекомендуемые",
+	"continue": "Продолжать",
+	"url_info": "Пр: www.website.md",
+	"add_site_intro": "add_site_intro",
+	"no_accept_sites": "no_accept_sites",
+	"add_site_pol_1": "add_site_pol_1",
+	"add_site_pol_2": "add_site_pol_2",
+	"add_site_pol_3": "add_site_pol_3",
+	"add_site_pol_4": "add_site_pol_4"
 }

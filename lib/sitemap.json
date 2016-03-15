@@ -1,8 +1,16 @@
 {
   "home": "/",
-  "add": "/add",
+  "add": "/website/add",
   "search": "/search",
-  "website": "/info/${0}",
+  "website": {
+    "$url": "/info/${0}",
+    "info": {
+      "$url": "/info/${0}",
+      "$absolute": true
+    },
+    "add": "/add",
+    "edit": "/edit/${0}"
+  },
   "to": "/to/${0}",
   "catalog": {
     "$absolute": true,

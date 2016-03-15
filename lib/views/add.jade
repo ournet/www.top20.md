@@ -2,4 +2,25 @@ extends ./layouts/catalog.jade
 
 block catalog_content
   h2.page-title= title
-  h2(style='background: #eee;padding: 10px;border-radius: 3px;margin:20px 0px;color:#ca0000;') Din motive tehnice, această funcție este momentan oprită.
+  h4.lead= __('add_site_intro')
+  br
+  form.form-horizontal(action=links.add(), method='POST')
+    if (message)
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          p.message.bg-warning= message
+    .form-group
+      label.col-sm-2.control-label(for='url')= __('url')
+      .col-sm-10
+        input#url.form-control(type='text', name='url', placeholder=__('url_info'), value=(website && website.host || null))
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = __('no_accept_sites')
+        ul
+          li= __('add_site_pol_1')
+          li= __('add_site_pol_2')
+          li= __('add_site_pol_3')
+          li= __('add_site_pol_4')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-success(type='submit')= __('continue')

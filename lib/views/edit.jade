@@ -1,0 +1,79 @@
+extends ./layouts/catalog.jade
+
+block catalog_content
+  h2.page-title= title
+    | :  
+    span= website.host
+  h4.lead= __('edit_site_intro')
+  br
+  form.form-horizontal(action=links.website.edit(website.host,{access_key: access_key}), method='POST')
+    if (message)
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          p.message.bg-warning= message
+    .form-group
+      label.col-sm-2.control-label(for='website_title')= __('title')
+      .col-sm-10
+        input#website_title.form-control(type='text', name='title', value=(website.title))
+    .form-group
+      label.col-sm-2.control-label(for='website_description')= __('description')
+      .col-sm-10
+        textarea#website_description.form-control(name='description', style='height: 60px')= website.description
+    .form-group
+      label.col-sm-2.control-label(for='website_keywords')= __('keywords')
+      .col-sm-10
+        textarea#website_keywords.form-control(name='keywords', style='height: 130px')= website.keywords.join('\n')
+    .form-group
+      label.col-sm-2.control-label= __('categories')
+      .col-sm-10
+        #website_categories
+        #website_select_categories
+        input#website_categories_data(name='categories', type='hidden', value=(website.categories || []).join(','))
+    .form-group
+      label.col-sm-2.control-label(for='website_contenttype')= __('content_type')
+      .col-sm-10
+        select#website_contenttype.form-control(name='contentType')
+          option= __('select_option')
+          each item in contentTypes
+            option(value=item.id, selected=(website.contentType===item.id ? 'selected': null))= item[currentCulture.language]
+    if (userIsAdmin)
+      .form-group
+        label.col-sm-2.control-label= __('country')
+        .col-sm-4
+          input.form-control(type='text', value=website.country, name='country', maxlength=2)
+      .form-group
+        label.col-sm-2.control-label= __('language')
+        .col-sm-4
+          input.form-control(type='text', value=website.lang, name='lang', maxlength=2)
+      .form-group
+        label.col-sm-2.control-label= __('status')
+        .col-sm-4
+          select.form-control(name='status')
+            option(value='active', selected=(website.status==='active'? 'selected': null)) Active
+            option(value='inactive', selected=(website.status==='inactive'? 'selected': null)) Inactive
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        .g-recaptcha(data-sitekey='6Ldy1RoTAAAAAKV5jXbmwPkXeXK33A0I3zdZK0b6')
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-success(type='submit')= __('save')
+
+block scripts
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+  script(src='https://www.google.com/recaptcha/api.js')
+  if (NODE_ENV==='production')
+      script(src='http://assets.ournetcdn.net/top20/js/website-'+ config.assets.js.website +'.min.js')
+    else
+      script(src='http://localhost:8044/js/website.js')
+  script.
+    initEditWebsite({
+      add: "#{__('add')}",
+      dataSelector: '#website_categories',
+      controlSelector: '#website_select_categories',
+      inputSelector: '#website_categories_data',
+      lang: '#{currentCulture.language}',
+      websiteCategories: !{JSON.stringify(website.categories||[])},
+      Categories: !{JSON.stringify(Categories)},
+      SubCategories: !{JSON.stringify(SubCategories)}
+    });

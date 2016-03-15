@@ -5,8 +5,5 @@
 .DS_Store
 .env
 node_modules
-config.json
 npm-debug.log
 *.tgz
-local.sh
-remote.sh
