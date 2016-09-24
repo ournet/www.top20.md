@@ -45,6 +45,7 @@
     "request": "^2.69.0",
     "response-time": "^2.3.1",
     "top20rating": "^0.0.3",
+    "transparentcache": "^1.0.0",
     "urlset": "^0.4.2"
   }
 }

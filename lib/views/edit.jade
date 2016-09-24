@@ -2,7 +2,7 @@ extends ./layouts/root.jade
 
 block content
   br
-  form.col-sm-10.form-horizontal(action=links.website.edit(website.host), method='POST')
+  form.col-sm-10.form-horizontal(action=links.website.edit(website.id,{ul: currentCulture.language}), method='POST')
     .form-group
       .col-sm-offset-2.col-sm-10
         h2.page-title= title

@@ -60,5 +60,11 @@
 	"language": "Язык",
 	"status": "Статус",
 	"save": "Сохранить",
-	"add": "Добавь"
+	"add": "Добавь",
+	"cannot_explore_website_url": "Eroare! Nu putem accesa site-ul dvs.",
+	"invalid_website_url": "Numele de domeniu este invalid! (Ex: www.site.md)",
+	"invalid_website_title": "Titlu invalid",
+	"invalid_website_description": "Descriere invalida",
+	"invalid_website_keywords": "Cuvinte cheie invalide",
+	"invalid_website_data": "Eroare! Datele introduse sunt invalite."
 }

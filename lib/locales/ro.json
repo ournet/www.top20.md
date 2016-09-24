@@ -50,7 +50,7 @@
 	"add_site_pol_3": "Fără domeniu personal, exemplu: numesite.narod.ru, etc.",
 	"add_site_pol_4": "Care nu sunt din R. Moldova sau nu sunt dedicate publicului din RM",
 	"no_accept_sites": "Nu se acceptă următoarele site-uri:",
-	"cannot_explore_website_url": "Eroare! Nu putem accesa site-uri dvs.",
+	"cannot_explore_website_url": "Eroare! Nu putem accesa site-ul dvs.",
 	"invalid_website_url": "Numele de domeniu este invalid! (Ex: www.site.md)",
 	"invalid_website_title": "Titlu invalid",
 	"invalid_website_description": "Descriere invalida",
