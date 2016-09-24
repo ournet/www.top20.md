@@ -1,12 +1,15 @@
-extends ./layouts/catalog.jade
+extends ./layouts/root.jade
 
-block catalog_content
-  h2.page-title= title
-    | :  
-    span= website.host
-  h4.lead= __('edit_site_intro')
+block content
   br
-  form.form-horizontal(action=links.website.edit(website.host,{access_key: access_key}), method='POST')
+  form.form-horizontal(action=links.website.edit(website.host), method='POST')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        h2.page-title= title
+          | :  
+          span= website.host
+        h4.lead= __('edit_site_intro')
+        br
     if (message)
       .form-group
         .col-sm-offset-2.col-sm-10

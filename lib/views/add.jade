@@ -1,26 +1,38 @@
-extends ./layouts/catalog.jade
+extends ./layouts/root.jade
 
-block catalog_content
-  h2.page-title= title
-  h4.lead= __('add_site_intro')
-  br
-  form.form-horizontal(action=links.add(), method='POST')
-    if (message)
-      .form-group
-        .col-sm-offset-2.col-sm-10
-          p.message.bg-warning= message
-    .form-group
-      label.col-sm-2.control-label(for='url')= __('url')
-      .col-sm-10
-        input#url.form-control(type='text', name='url', placeholder=__('url_info'), value=(website && website.host || null))
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        = __('no_accept_sites')
-        ul
-          li= __('add_site_pol_1')
-          li= __('add_site_pol_2')
-          li= __('add_site_pol_3')
-          li= __('add_site_pol_4')
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        button.btn.btn-success(type='submit')= __('continue')
+block content
+  .row
+    .col-md-2.col-lg-3
+    .col-lg-6.col-md-8.col-sm-12
+      br
+      h2.page-title= title
+      h4.lead= __('add_site_intro')
+      br
+      form.form-horizontal(action=links.add(), method='POST')
+        if (message)
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              p.message.bg-warning= message
+        .form-group
+          label.col-sm-2.control-label(for='url')= __('url')
+          .col-sm-10
+            input#url.form-control(type='text', name='url', placeholder=__('url_info'), value=(website && website.host || null))
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = __('no_accept_sites')
+            ul
+              li= __('add_site_pol_1')
+              li= __('add_site_pol_2')
+              li= __('add_site_pol_3')
+              li= __('add_site_pol_4')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            .g-recaptcha(data-sitekey='6Ldy1RoTAAAAAKV5jXbmwPkXeXK33A0I3zdZK0b6')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-success(type='submit')= __('continue')
+      br
+      br
+block scripts
+  //- script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+  script(src='https://www.google.com/recaptcha/api.js')

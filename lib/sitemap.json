@@ -2,6 +2,7 @@
   "home": "/",
   "add": "/website/add",
   "search": "/search",
+  "login": "/login",
   "website": {
     "$url": "/info/${0}",
     "info": {
