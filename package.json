@@ -3,6 +3,7 @@
   "version": "3.1.6",
   "description": "Top20.md website",
   "main": "./lib/app.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node ./lib/app.js"
@@ -19,10 +20,13 @@
   "author": "Dumitru Cantea",
   "license": "ISC",
   "dependencies": {
+    "accounts": "^0.2.0",
     "bluebird": "^3.3.0",
     "body-parser": "^1.12.4",
     "client-sessions": "^0.7.0",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^1.1.0",
+    "dynamo-accounts": "^0.1.0",
     "express": "^4.12.4",
     "html-explorer": "^0.1.9",
     "i18n": "^0.5.0",
@@ -36,10 +40,10 @@
     "ournet.logger": "^0.1.0",
     "ournet.utils": "^0.1.0",
     "passport": "^0.3.2",
-    "passport-auth0": "^0.5.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
     "request": "^2.69.0",
     "response-time": "^2.3.1",
-    "simple-iso-countries": "0.0.3",
     "top20rating": "^0.0.3",
     "urlset": "^0.4.2"
   }

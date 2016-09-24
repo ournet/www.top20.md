@@ -7,6 +7,9 @@ block content
         .col-sm-7.col-xs-12
           .content-control.view-table
             .control-title= __('info_website')
+              |  (
+              a(href=links.website.edit(website.id,{ul: currentCulture.language}))=__('edit')
+              | )
             .control-content
               table
                 tbody

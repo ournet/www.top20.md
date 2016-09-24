@@ -7,21 +7,17 @@ block content
       br
       h2.page-title= __('login')
       h4.lead= subTitle
-      #login-form(style='margin: 0px auto; padding: 10px;')
+      ul.soclog(data-redirect=redirectUrl)
+        li.soclog-item.facebook
+          a(href=links.auth.facebook({ul: currentCulture.language, redirect: redirectUrl}))
+            i
+            = util.format(__('login_with_format'), 'Facebook')
+
+        li.soclog-item.google
+          a(href=links.auth.google({ul: currentCulture.language, redirect: redirectUrl}))
+            i
+            = util.format(__('login_with_format'), 'Google')
+
 
       br
       br
-block scripts
-  script(src='https://cdn.auth0.com/js/lock/10.2/lock.min.js')
-  script.
-    var lock = new Auth0Lock('9gjel9ujp95eXZAebIZmGxsACrSDwsxd', 'top20.eu.auth0.com', {
-      container: 'login-form',
-      auth: {
-        redirectUrl: 'http://'+'localhost:41521'+'/auth/auth0/callback',
-        responseType: 'code',
-        params: {
-          scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
-        }
-      }
-    });
-    lock.show();

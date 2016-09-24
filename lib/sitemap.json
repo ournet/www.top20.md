@@ -25,5 +25,15 @@
     "subCategoryPage": "/${0}/${1}/${2}",
     "typeSubCategory": "/${0}/${1}/${2}",
     "typeSubCategoryPage": "/${0}/${1}/${2}/${3}"
+  },
+  "auth": {
+    "facebook": {
+      "$url": "/facebook",
+      "callback": "/callback"
+    },
+    "google": {
+      "$url": "/google",
+      "callback": "/callback"
+    }
   }
 }

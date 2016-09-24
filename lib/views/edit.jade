@@ -2,7 +2,7 @@ extends ./layouts/root.jade
 
 block content
   br
-  form.form-horizontal(action=links.website.edit(website.host), method='POST')
+  form.col-sm-10.form-horizontal(action=links.website.edit(website.host), method='POST')
     .form-group
       .col-sm-offset-2.col-sm-10
         h2.page-title= title
@@ -54,9 +54,6 @@ block content
           select.form-control(name='status')
             option(value='active', selected=(website.status==='active'? 'selected': null)) Active
             option(value='inactive', selected=(website.status==='inactive'? 'selected': null)) Inactive
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        .g-recaptcha(data-sitekey='6Ldy1RoTAAAAAKV5jXbmwPkXeXK33A0I3zdZK0b6')
 
     .form-group
       .col-sm-offset-2.col-sm-10
@@ -64,7 +61,6 @@ block content
 
 block scripts
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-  script(src='https://www.google.com/recaptcha/api.js')
   if (NODE_ENV==='production')
       script(src='http://assets.ournetcdn.net/top20/js/website-'+ config.assets.js.website +'.min.js')
     else
