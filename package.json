@@ -36,7 +36,7 @@
     "moment": "^2.10.3",
     "morgan": "^1.5.3",
     "ournet.data": "^0.1.1",
-    "ournet.data.websites": "^0.2.0",
+    "top20websites": "^0.3.0",
     "ournet.logger": "^0.1.0",
     "ournet.utils": "^0.1.0",
     "passport": "^0.3.2",
