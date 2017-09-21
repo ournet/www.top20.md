@@ -66,5 +66,6 @@
 	"invalid_website_title": "Titlu invalid",
 	"invalid_website_description": "Descriere invalida",
 	"invalid_website_keywords": "Cuvinte cheie invalide",
-	"invalid_website_data": "Eroare! Datele introduse sunt invalite."
+	"invalid_website_data": "Eroare! Datele introduse sunt invalite.",
+	"alexaSearchVisits": "alexaSearchVisits"
 }

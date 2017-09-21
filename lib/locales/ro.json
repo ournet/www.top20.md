@@ -66,5 +66,6 @@
 	"status": "Status",
 	"login": "Login",
 	"login_with_format": "Login cu %s",
-	"edit": "Editare"
+	"edit": "Editare",
+	"alexaSearchVisits": "alexaSearchVisits"
 }

@@ -12,7 +12,7 @@ block catalog_content
           th= __('website')
           th.number.ievolution.order-by(title=__('rating_title'))= __('rating')
           th.number.ievolution(title=__('alexa_rank_title'))= __('alexa_rank')
-          th.number.ievolution(title=__('google_rank_title'))= __('google_rank')
+          //- th.number.ievolution(title=__('google_rank_title'))= __('google_rank')
           th.number.last.ievolution(title=__('yandex_rank_title'))= __('yandex_rank')
       tbody
         each website, index in catalog.websites
@@ -42,15 +42,15 @@ block catalog_content
                     .prev= util.numberFormat(website.prevRatings.alexaCountryRank,0, currentCulture.language)
                     if (diff!==0)
                       span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
-            td.number.ievolution
-              if (website.ratings)
-                .arrow-target
-                  = website.ratings.googleRank
-                  if (website.prevRatings)
-                    - diff = website.ratings.googleRank - website.prevRatings.googleRank;
-                    .prev= website.prevRatings.googleRank
-                    if (diff!==0)
-                      span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
+            //- td.number.ievolution
+            //-   if (website.ratings)
+            //-     .arrow-target
+            //-       = website.ratings.googleRank
+            //-       if (website.prevRatings)
+            //-         - diff = website.ratings.googleRank - website.prevRatings.googleRank;
+            //-         .prev= website.prevRatings.googleRank
+            //-         if (diff!==0)
+            //-           span.icon(title=diff, class=(diff>0 ? "up-arrow" : "down-arrow"))
             td.number.ievolution
               if (website.ratings)
                 .arrow-target

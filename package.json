@@ -1,6 +1,6 @@
 {
   "name": "www.top20.md",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Top20.md website",
   "main": "./lib/app.js",
   "private": true,
@@ -44,7 +44,7 @@
     "passport-google-oauth20": "^1.0.0",
     "request": "^2.69.0",
     "response-time": "^2.3.1",
-    "top20rating": "^0.0.3",
+    "top20rating": "^0.1.0",
     "transparentcache": "^1.0.0",
     "urlset": "^0.4.2"
   }
