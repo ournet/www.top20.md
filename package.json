@@ -1,6 +1,6 @@
 {
   "name": "www.top20.md",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Top20.md website",
   "main": "./lib/app.js",
   "private": true,
@@ -36,7 +36,6 @@
     "moment": "^2.10.3",
     "morgan": "^1.5.3",
     "ournet.data": "^0.1.1",
-    "top20websites": "^0.3.0",
     "ournet.logger": "^0.1.0",
     "ournet.utils": "^0.1.0",
     "passport": "^0.3.2",
@@ -45,6 +44,7 @@
     "request": "^2.69.0",
     "response-time": "^2.3.1",
     "top20rating": "^0.1.0",
+    "top20websites": "^0.3.1",
     "transparentcache": "^1.0.0",
     "urlset": "^0.4.2"
   }
