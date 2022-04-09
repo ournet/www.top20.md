@@ -33,7 +33,7 @@
     "jade": "^1.9.2",
     "lodash": "^4.3.0",
     "method-override": "^2.3.3",
-    "moment": "^2.10.3",
+    "moment": "^2.29.2",
     "morgan": "^1.5.3",
     "ournet.data": "^0.1.1",
     "ournet.logger": "^0.1.0",
