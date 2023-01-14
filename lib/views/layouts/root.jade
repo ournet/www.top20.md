@@ -9,9 +9,9 @@ html(lang=currentCulture.language)
     meta(name='keywords', content=site.head.keywords)
     block styles
     if (NODE_ENV==='production')
-      link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/top20/css/main-'+ config.assets.css.main +'.min.css')
+      link(type='text/css', rel='stylesheet', href='//assets.ournetcdn.net/top20/css/main-'+ config.assets.css.main +'.min.css')
     else
-      link(type='text/css', rel='stylesheet', href='http://localhost:8044/css/main.css')
+      link(type='text/css', rel='stylesheet', href='//localhost:8044/css/main.css')
     if (site.head.canonical)
       link(rel='canonical', href=site.head.canonical)
     link(rel='shortcut icon', href=config.favicon)
@@ -40,7 +40,7 @@ html(lang=currentCulture.language)
                 if (weatherWidget && weatherWidget.forecast)
                   #widget-weather
                     span.symbol
-                      img(alt='', src='http://assets.ournetcdn.net/root/img/icons/weather/48/'+weatherWidget.forecast.symbol.id+'.png', title=weatherWidget.forecast.symbol.name)
+                      img(alt='', src='//assets.ournetcdn.net/root/img/icons/weather/48/'+weatherWidget.forecast.symbol.id+'.png', title=weatherWidget.forecast.symbol.name)
                     span.name
                       a(href=weatherWidget.place.url)= weatherWidget.place.name
                       span.no= weatherWidget.forecast.temperature

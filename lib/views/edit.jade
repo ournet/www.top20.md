@@ -62,9 +62,9 @@ block content
 block scripts
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
   if (NODE_ENV==='production')
-      script(src='http://assets.ournetcdn.net/top20/js/website-'+ config.assets.js.website +'.min.js')
+      script(src='//assets.ournetcdn.net/top20/js/website-'+ config.assets.js.website +'.min.js')
     else
-      script(src='http://localhost:8044/js/website.js')
+      script(src='//localhost:8044/js/website.js')
   script.
     initEditWebsite({
       add: "#{__('add')}",
