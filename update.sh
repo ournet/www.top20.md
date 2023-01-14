@@ -2,5 +2,5 @@
 
 #update repository
 git pull
-npm install
+yarn
 pm2 restart ./pm2.json
